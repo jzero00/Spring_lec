@@ -90,4 +90,29 @@ public class MemberActionController {
 		return url;
 	}
 	
+	@RequestMapping("abled.do")
+	public String enabled(String id, Model model) throws Exception {
+		String url = "/member/abled_success";
+		
+		try {
+			memberService.enabled(id);
+			model.addAttribute("id", id);
+		} catch (SQLException e) {
+			url = "/member/abled_fail";
+		}
+		return url;
+	}
+	
+	@RequestMapping("disabled.do")
+	public String disabled(String id, Model model) throws Exception {
+		String url = "/member/disabled_success";
+		
+		try {
+			memberService.disabled(id);
+			model.addAttribute("id", id);
+		} catch (SQLException e) {
+			url = "/member/disabled_fail";
+		}
+		return url;
+	}
 }

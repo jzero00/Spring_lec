@@ -4,5 +4,5 @@
 
 <script>
 	alert("${id}를 비활성화시켰습니다.");
-	location.href="/member/detail.do?id=${id}"
+	location.href="/mvc/member/detail.do?id=${id}"
 </script>

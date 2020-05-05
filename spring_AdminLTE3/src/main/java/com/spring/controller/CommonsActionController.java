@@ -17,7 +17,7 @@ import com.spring.service.MemberService;
 
 @Controller
 @RequestMapping("/commons/*")
-public class CommonActionController {
+public class CommonsActionController {
 
 	@Autowired
 	private MemberService memberService;
@@ -62,6 +62,5 @@ public class CommonActionController {
 		session.invalidate();
 		
 		return url;
-	}
-	
+	}	
 }
