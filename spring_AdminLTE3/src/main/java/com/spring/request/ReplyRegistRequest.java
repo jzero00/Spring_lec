@@ -6,6 +6,11 @@ import com.spring.dto.ReplyVO;
 
 public class ReplyRegistRequest {
 
+	@Override
+	public String toString() {
+		return "ReplyRegistRequest [bno=" + bno + ", replyer=" + replyer + ", replytext=" + replytext + "]";
+	}
+
 	private int bno;
 	private String replyer;
 	private String replytext;

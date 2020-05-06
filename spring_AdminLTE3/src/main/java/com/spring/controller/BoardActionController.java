@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.spring.dto.BoardVO;
+import com.spring.request.BoardModifyRequest;
 import com.spring.request.BoardRegistRequest;
 import com.spring.request.SearchCriteria;
 import com.spring.service.BoardService;
@@ -64,21 +65,23 @@ public class BoardActionController {
 		return url;
 	}
 	
-	@RequestMapping(value="modifyForm.do", method=RequestMethod.GET)
-	public void modifyForm(int bno, Model model) throws Exception {
-//		String url = "board/modifyBoard";
+	@RequestMapping(value="modifyForm.do")
+	public String modifyForm(int bno, Model model) throws Exception {
+		String url = "board/modifyBoard";
 		
 		BoardVO board = boardService.getBoardForModify(bno);
 		
 		model.addAttribute("board", board);
-//		return url;
+		
+		return url;
 	}
 	
 	@RequestMapping(value="modify.do", method=RequestMethod.POST)
-	public String modify(BoardVO board, Model model) throws Exception {
+	public String modify(BoardModifyRequest modifyReq, Model model) throws Exception {
 		String url = "board/modify_success";
 		
 		try {
+			BoardVO board = modifyReq.toBoardVO();
 			boardService.modify(board);
 		} catch (SQLException e) {
 			url = "board/modify_fail"; 

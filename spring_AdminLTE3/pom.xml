@@ -33,6 +33,8 @@
 		<myBatis.spring-version>1.2.2</myBatis.spring-version>
 		<!-- sitemesh -->
 		<opensymphony.sitemesh-version>2.4.2</opensymphony.sitemesh-version>
+		<!-- jackson databind -->
+		<jackson.databind-version>2.9.8</jackson.databind-version>
 		
 		<!-- Test -->
 		<junit.version>4.11</junit.version>
@@ -159,6 +161,14 @@
 		    <artifactId>mybatis-spring</artifactId>
 		    <version>${myBatis.spring-version}</version>
 		</dependency>
+		
+		<!-- jackson-databind -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>${jackson.databind-version}</version>
+		</dependency>
+		
 					
 		<!-- Servlet -->
 		<dependency>
