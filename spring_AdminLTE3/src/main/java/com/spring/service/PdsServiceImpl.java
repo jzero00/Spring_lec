@@ -14,12 +14,6 @@ import com.spring.request.SearchCriteria;
 
 public class PdsServiceImpl implements PdsService {
 	
-//	private PdsService pdsService;
-//	public void setPdsService(PdsService pdsService) {
-//		this.pdsService = pdsService;
-//	}
-	
-	
 	private PdsDAO pdsDAO;
 	public void setPdsDAO(PdsDAO pdsDAO) {
 		this.pdsDAO = pdsDAO;
@@ -75,6 +69,7 @@ public class PdsServiceImpl implements PdsService {
 	}
 	@Override
 	public void remove(int pno) throws SQLException {
+		attachDAO.deleteAllAttach(pno);
 		pdsDAO.deletePds(pno);		
 	}
 	@Override
