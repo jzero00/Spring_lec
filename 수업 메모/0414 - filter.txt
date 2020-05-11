@@ -1,0 +1,12 @@
+SiteMesh template Framework
+
+web.xml에 Filter를 등록
+필요한 것
+
+로그인한 사람의 enabled를 검사해서 1이 아니면 regist, modify disabled remove를 제한한다.
+
+requset에서 url주소를 가져와서 regist modift disabled remove를 가져온다
+필터를 등록할때 init parameter를 주는데 키워드를 ,로 구분해서 준다
+해당 파라미터를 스트링을 통째로 가져온다. 가져온것을 스트링토크나이저로 잘라낸다
+사용자가 요청한 url은 반드시 저 4가지 키워드가 있어야 한다.
+

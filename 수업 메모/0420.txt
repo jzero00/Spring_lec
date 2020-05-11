@@ -1,0 +1,15 @@
+화면을 만들기 위해 data set이 model
+
+HTML
+
+header 에 resources ex: css, js, image
+
+body 에 HTML태그
+
+비동기 : Data(JSON,String)
+
+처리해주는 애가 톰캣의 defaultServlet이 해줌
+defaultServlet : /
+jspServlet : .jsp
+customServlet : /** return : jsp
+비동기 데이터는 returnd이 response.out

@@ -1,0 +1,31 @@
+삭제
+서비스에 id를 줘야함
+로그인을 한 계정인지 아닌지 확인
+
+잘됐을때 화면 정한다.
+서비스에 넘겨줄 파라미터를 받는다.
+로그인 했는지 안했는지 확인 세션으로
+로그인한 계정이면 denied
+로그인한 계정이 아니여야 삭제를 진행
+성공하면 success
+실패하면 fail
+로그인유저면 denied
+jsp가 열리면 forward되면서 servlet의 파라미터가 살아서 간다.
+
+scope는 attribute에서 찾을때
+param은 request에서 찾을때
+
+filter 개념이 생긴 이유
+request response 올때마다 해야하는 것들이 생기기 시작
+서블릿마다 필요한 코드를 심기 시작
+ex) 인코딩, 로그인 세션
+모든 request가 filter를 거쳐서 서블릿으로 가게 함
+
+Filter
+init은 예외되는 
+
+if(window.opener())
+열린창이 있으면 닫아라
+
+sitemesh쓸때 body태그 안에 스크립트를 써야함
+<decorator:body>는 파일 안에 body가 있으면 body태그 빼고 내용만 들어가고 없으면 모든 태그가 들어간다

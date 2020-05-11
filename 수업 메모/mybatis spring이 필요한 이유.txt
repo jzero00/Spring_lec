@@ -1,0 +1,2 @@
+mybatis를 spring에서 사용하기 위해 사용
+마찬가지로 Tiles를 사용하기 위해 bean에 class를 주고 tilesViewResolver에서 참조하게 만들어줌

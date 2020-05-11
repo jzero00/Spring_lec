@@ -1,0 +1,34 @@
+﻿jdk 1.7
+ojdbc6
+mybatis 3.4
+commons-dbcp2.4
+common-pool2 2.5
+common-io 2.4
+common-logging 1.2
+
+서비스는 기능단위로
+DAO는 쿼리 하나 단위로
+
+mybatis mapper
+SQL config 만드는 방법
+
+JDBC
+DataSource
+Connection			DBCP2(Pooled)
+Statement
+ResultState			JDBC
+
+MyBatis ORM
+	+
+Custom DataSource
+
+doGet() per request
+
+톰캣에서 처음 init이 실행됨
+컨텍스트의 배포가 스탑시키면 웹컨테이너가 날아가면서 서블릿이 날아감
+날아가기 전에 destroy가 한번 실행됨
+
+인스턴스 올려봐야 차이가 없으면 static
+
+JSTL
+var는 pageContext의 setattribute에 ""

@@ -1,0 +1,7 @@
+$.ajax 에서 $(this)를 쓰게 되면 $.ajax 를 가리키게 된다
+따라서 $(this)를 사용하려면 밖에서 var 를 써주고 사용한다.
+
+data는 json.stringify
+contentType json
+Controller에서 받을때는 객체로(Map, VO ...)
+HandlerMapper가 requestheader를 

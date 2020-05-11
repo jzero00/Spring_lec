@@ -1,0 +1,11 @@
+Spring adaptor가 invoke하면서 변수명을 비교해 해당 parameter value를 넣어준다.
+자동 형변환해서 set method에 넣어준다
+
+400 error
+String 아닌 type을 주의해서 보기
+들어온 parameter가 형변환이 불가능할때 발생
+
+415 error
+ajax 사용시 contentType 이나 dataType, data를 확인해본다
+F12 request header
+

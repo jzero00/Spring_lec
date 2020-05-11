@@ -1,0 +1,29 @@
+페이지 갯수
+
+게시판 스크랩 기능
+알림 기능
+
+게시판
+우클릭
+스크랩
+이메일
+SNS
+우선순위
+
+로그인 가상키보드
+
+전체 리스트 개수 list totalcount
+pageNum
+perPageNum 한페이지당 보여줄 row 갯수
+startPage endPage
+pageCount 전체 페이지 갯수
+맨 앞으로 버튼
+맨 뒤로 버튼
+prev next 
+
+검색
+구분 searchType
+검색어 keyword
+
+5번페이지 있다가 글하나를 읽는다. 목록을 누르면 다시 5번 페이지로 이동시켜야 한다.
+검색한 단어의 페이징

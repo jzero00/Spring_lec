@@ -1,0 +1,9 @@
+﻿파일 첨부할때
+form 태그에 enctype=multipart/form-data를 쓴다.
+enctype쓰면 request.getParameter로 데이터를 못들고옴
+
+파일 이름은 header에 저장되어 있다
+현재 필터는 body에만 적용된다.
+따라서 header에는 적용이 안된다.
+그래서 필터 따로 잡아줘야 한다
+ 꼭 기억하랜다 기억은 니미... 좀있으면 다 잊을거다

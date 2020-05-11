@@ -1,0 +1,33 @@
+﻿WAS 기반 JDK를 따라간다
+ajax
+success
+error
+complete
+응답코드를 받음
+
+javascript에서 files 객체는 배열로 받는데 필요한 정보는 0번 인덱스에만 저장되어 있다.
+
+javascript에서 if의 조건 안에는 있냐 없냐만 판단한다.
+0, nan, null, false는 false로 처리됨
+
+property에 파일 경로를 / 를 쓴 이유는
+
+
+form 태그에 있는 파일을 submit하면 화면이 바뀌게 됨
+화면을 안바뀌게 하면서 업로드 시키려면
+FormData 객체를 이용한다.
+파일을 파라미터로 넘기기 위해 formdata로 객체화시켜서 ajax처리한다.
+processData
+contentType을 false처리해야함
+
+form태그의 0번 인덱스를 입력하지 않으면 결과가 [object Object] form태그가 아님
+
+form의 0번 인덱스를 찾는 이유는 
+HTMLFormElement를 찾기 위해
+
+관리자 페이지는 properties로 관리한다
+파일 읽어서 토큰단위로 잘라서 UI에 뿌려준다.
+관리자 페이지는 리소스파일을 관리하는 것
+운영자나 사용자가 일반적으로 하는 CRUD가 필요없음
+
+get은 주소줄에서 data를 받음

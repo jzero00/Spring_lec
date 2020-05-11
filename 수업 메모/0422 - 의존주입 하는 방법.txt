@@ -1,0 +1,19 @@
+템플릿 만든다.
+
+모든 인스턴스 singltone
+의존성을 따진다
+setXXX()
+인스턴스 주입과정
+setXXX() 호출
+컨테이너 조립은 Listener가 함
+나중에 ContextLoader로 빠짐
+
+1. 액션은 url.properties에 액션을 등록한다.
+key url 
+2. 비지니스 로직 인스턴스 조립 및 생성 : web.xml
+(Context-param)
+param-name setMethod: 
+param-value : class(package 포함)
+3.Singleton Pattern 삭제
+4. new 키워드는 사용하지 않는다.
+setMethod에 의해서 의존적으로 주입한다.

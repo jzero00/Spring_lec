@@ -1,0 +1,31 @@
+1. DataBase 구축 (Table 생성, 관계성, 제약성)
+
+2. DataSet을 기준으로 DTO 클래스 작성(ex.MemberVO)
+
+3. CRUD와 특정 기능에 필요한 SQL문 작성
+
+4. SqlConfig / SqlMapper 등록
+
+5. interface DAO 생성 (1 query : 1 method)
+	-> sql param, result -> method param, return type
+	-> sql id -> method name
+	-> DAOImpl class 구현
+
+6. interface Service 생성. (1 기능 : 1 method)
+	-> action 수렴 결과 -> method return type
+	-> DAO 건네주는 data 혹은 처리 data -> method param -> action으로부터 전달받음
+	-> data method param
+	-> 기능적 표현 접두사(getXX, removeXX, registXX ...) -> method name
+	-> ServiceImpl class 구현
+
+7. Bean 등록 : 의존주입 (외부에서 인스턴스 생성 -> set메소드에 의해서 주입)
+	-> web.xml / Listener로 진행 + Application Context (Container)
+	-> param name을 set메소드 기준으로 만든다.
+
+8. Action 생성 -> Servlet : doGet(), doPost() 연상 -> return url
+
+9. Action 등록 -> url.properties -> url = action class
+
+10. HandlerMapper 에 의해 service가 의존주입, 그리고 url에 따른 Action 할당
+
+11. FrontServlet -> url : action instance 받음 -> view = action.excute(request, response)

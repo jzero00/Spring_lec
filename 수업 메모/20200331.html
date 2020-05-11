@@ -1,0 +1,83 @@
+get
+보고 말꺼면 다 get
+
+post
+주소줄로 데이터를 이동시키지 않음
+서버에 처리를 목적으로 한다면 post
+body에 심어서 데이터를 이동시킴
+반송(feedback)이 반드시 필요
+
+Servlet
+애플릿 변사체됨
+애플릿 자바가 직접 앱을 뚫고 나오게 만든 것?
+서버 애플릿이 서블릿임
+
+클라이언트의 요청을 서버, WAS(tomcat)에 거쳐서 tomcat에 맞춰서 서블릿이 메소드를 정함
+do...로 시작함
+doGet(response, request)
+doPost(response, request)
+WAS에서 웹서버를 거쳐 모니터에 response해줌
+
+클래스의 인터페이스를 만들어야 하는 이유
+리스트
+웹진 - 썸네일 보여주는 게시판
+갤러리 - 사진 들어간 게시판
+
+패키지 구조
+기준이 있으면 따른다
+대중소의 분류의 기준을 어떻게 잡느냐?
+사이트 이름, 아키텍쳐 구조, 컨텐츠 이름
+기준이 없다면?
+
+	
+	private static final long serialVersionUID = 1L;	//업데이트할때 여기 숫자 바꿔야 함 (클래스 버전)
+오버라이딩
+상속할때 부모클래스의 이름을 그대로 가져와서 뒤에 이름을 붙여준다
+
+어노테이션 역할
+선언자역할 그래야 한다는 의미 
+
+톰캣이 서블릿을 모아두기 위해 web container를 만들어 저장
+톰캣에 Map
+Mapper를 내장함
+key url
+value Servlet
+Bean객체
+
+post는 뷰와 처리에 대한 문제
+브라우저에 처리되는 데이터 타입은 스트링과 바이너리 타입만 존재
+브라우저에서는 스트링처리됨
+
+============================
+서블릿이 왜 필요하나?
+jsp가 왜 필요하나?
+
+HTML이 정적인 이유?
+정해진대로 보여주기 때문
+
+서블릿 특징
+동적 웹어플리케이션 컴포넌트(데이터)를 담음
+
+web.xml의 역할
+
+어노테이션 vs web.xml 차이
+xml이 귀찮....
+어노테이션이 편하긴 한데 클래스를 다 확인해봐야 함
+협업할떄 어노테이션은 불리함 유지보수하기 힘들
+둘중에 하나만 해야한다 안그러면 LifeCycleException 발생
+
+forward - Servlet의 데이터를 jsp로 넘겨준다.
+톰캣에서 jsp를 .java와 .class로 변환시켜 출력물을 html로 바꿔서
+client의 화면에 뿌려줌
+redirect 
+post진행후 forward처리하면 안됨
+post 내용이 남아있어서 새로고침할때마다 계속 post됨
+대출창구가서 통장만들기 ㅋㅋㅋ
+받아주면 forward
+안받아주고 다른데 가면 redirect
+request가 남아있으면 forward
+안남아있으면 redirect
+request를 갱신해야하면 redirect
+Dispatcher 총괄자?
+redirect는 무조건 get방식
+
