@@ -1,41 +1,57 @@
 package com.spring.controller;
 
-import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.commons.io.IOUtils;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.spring.dto.MemberVO;
-import com.spring.service.MemberService;
 import com.spring.utils.GetUploadPath;
+import com.spring.utils.MediaUtils;
 
 @Controller
 public class GetImgController {
-
-	@Autowired
-	private MemberService memberService;
-	public void setMemberService(MemberService memberService) {
-		this.memberService = memberService;
-	}
 	
 	@RequestMapping(value="member/picture/get.do", method=RequestMethod.GET)
 	@ResponseBody
-	public ResponseEntity<byte[]> getMemberProfileImg(String id, Model model) throws Exception {
+	public ResponseEntity<byte[]> getMemberProfileImg(@RequestParam("picture") String fileName) throws Exception {
 		ResponseEntity<byte[]> entity = null;
+		InputStream in = null;
 		
-		String filePath = GetUploadPath.getUploadPath("member.picture.upload");
-		MemberVO member = memberService.getMember(id);
-		String fileName = member.getPicture();
-		filePath = filePath + fileName;
-		
-		File picture = new File(filePath);
-		
-		model.addAttribute("picture", picture);
+		try {
+			String filePath = GetUploadPath.getUploadPath("member.picture.upload");
+			filePath = filePath + fileName;
+			String formatName = filePath.substring(filePath.lastIndexOf(".")+1);
+			MediaType mType = MediaUtils.getMediaType(formatName);
+			HttpHeaders headers = new HttpHeaders();
+			
+			in = new FileInputStream(filePath);
+			
+			if(mType != null) {
+				headers.setContentType(mType);
+			} else {
+				fileName = fileName.substring(fileName.indexOf("$$") + 1);
+				headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+				headers.add("Content-Disposition", "attachment;filename=\""
+						+new String(fileName.getBytes("utf-8"),"ISO-8859-1")
+						+"\"");
+			}
+			entity = new ResponseEntity<byte[]>(IOUtils.toByteArray(in),headers,HttpStatus.CREATED);
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<byte[]>(HttpStatus.INTERNAL_SERVER_ERROR);
+		} finally {
+			if(in != null) in.close();
+		}
+
 		
 		return entity;
 	}
