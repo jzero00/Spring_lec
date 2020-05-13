@@ -1,0 +1,8 @@
+AOP
+
+관점 전후를 확인해봄
+중복코드 해결
+Aspect 구성
+~하기     	전/후       		~한다
+Point-cut  Join-point		Advice
+감시 (proxy)에 올라옴 interface.method()로 만든다.
