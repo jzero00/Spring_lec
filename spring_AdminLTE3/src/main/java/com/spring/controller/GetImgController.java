@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.spring.utils.GetUploadPath;
 import com.spring.utils.MediaUtils;
 
+
 @Controller
 public class GetImgController {
 	
