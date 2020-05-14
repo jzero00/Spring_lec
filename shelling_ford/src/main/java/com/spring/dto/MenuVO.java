@@ -2,16 +2,16 @@ package com.spring.dto;
 
 public class MenuVO {
 
-	private String mcode     ;
-	private String codename  ;
-	private String url       ;
-	private String iconfile  ;
-	private String upcode    ;
-	private int enable    ;
+	private String mcode;
+	private String codename;
+	private String url;
+	private String iconfile;
+	private String upcode;
+	private int enable;
 	private int iscategory;
-	private String iconcolor ;
-	private int codelevel ;
-	private String jstext    ;
+	private String iconcolor;
+	private int codelevel;
+	private String jstext;
 	
 	
 	public String getMcode() {

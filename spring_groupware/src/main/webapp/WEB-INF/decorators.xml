@@ -14,6 +14,6 @@
 	<excludes>		
 		<pattern>/commons/login*</pattern>
 		<pattern>/commons/userInfo*</pattern>	
-		<pattern>/conmons/subMenuHql*</pattern>	
+		<pattern>/commons/subMenuHql*</pattern>	
 	</excludes>
 </decorators>

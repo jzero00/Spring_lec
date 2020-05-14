@@ -16,6 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.groupware.dto.EmployeeVO;
+
 /**
  * 이 테스트를 하는 이유
  * ojdbc에서 에러가 나는지 myBatis에서 에러가 나는지 확인할 수 있음
@@ -60,7 +62,7 @@ public class TestBasicDataSource {
 		Assert.assertNotEquals(null, conn);
 	}
 	
-	/*@Test
+	@Test
 	public void testSqlInjection()throws SQLException{		
 		
 		final String id="mimi";
@@ -70,14 +72,14 @@ public class TestBasicDataSource {
 		this.stmt = this.conn.createStatement();
 		this.rs = this.stmt.executeQuery(sql);
 		
-		MemberVO member=null;
+		EmployeeVO member=null;
 		if(rs.next()){
-			member = new MemberVO();
+			member = new EmployeeVO();
 			member.setId(rs.getString("id"));
 		}
 		
 		Assert.assertEquals(id, member.getId());		
-	}*/
+	}
 
 	@After  
 	public void end()throws SQLException{
