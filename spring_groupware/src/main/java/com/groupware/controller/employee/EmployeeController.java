@@ -1,21 +1,21 @@
 package com.groupware.controller.employee;
 
-import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.groupware.dto.CareerVO;
+import com.groupware.dto.EmployeeCommand;
 import com.groupware.dto.EmployeeVO;
 import com.groupware.request.SearchCriteria;
 import com.groupware.service.employee.DepartmentService;
@@ -76,17 +76,22 @@ public class EmployeeController {
 		return url;
 	}
 
-	@RequestMapping(value="/regist", method=RequestMethod.POST, consumes=MediaType.MULTIPART_FORM_DATA_VALUE)
-	public String registPost(@RequestParam EmployeeVO employee, List<CareerVO> careers, HttpServletResponse response) throws Exception {
-		String url = "employee/regist_success";
-		employeeService.regist(employee, careers);
-		System.out.println(employee);
-		
+	@RequestMapping(value = "/regist", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	public String registPost(@RequestParam("id") String id,
+			@RequestParam("pwd") String pwd,
+							@RequestParam("picture") MultipartFile picture, @RequestParam("licenseDoc")
+							MultipartFile licenseDoc
+							)
+			throws Exception {
+		String url = "";/* "employee/regist_success"; */
+		System.out.println(id);
+		System.out.println(pwd);
+		System.out.println(licenseDoc.getOriginalFilename());
+		// System.out.println(licenseDoc.getOriginalFilename());
+
+//		 employeeService.regist(employee, careers);
+
 		return url;
 	}
-	
-//	public ModelAndView idCheck(String id) throws Exception {
-//		String url = "";
-//		
-//	}
+
 }

@@ -112,4 +112,11 @@ public class MemberActionController {
 		}
 		return url;
 	}
+	
+	@RequestMapping("registForm.do")
+	public String registForm() throws Exception {
+		String url = "member/regist";
+		
+		return url;
+	}
 }

@@ -20,8 +20,8 @@ $('input#picture').on('change',function(event){
 		return;
 	};
 	
-
-	$('input#picture').value=this.files[0].name;
+	var imgName = this.files[0].name;	//파일 이름
+	$('input#picture').value=imgName
 	
 	if (this.files && this.files[0]) {
 		
@@ -39,6 +39,9 @@ $('input#picture').on('change',function(event){
         
         reader.readAsDataURL(this.files[0]);
 	}
+// 	alert(imgName);
+	document.getElementById('picturePreView').setAttribute('value',imgName);
+	console.log(imgName);
 });
 
 function upload_go(){
@@ -46,13 +49,13 @@ function upload_go(){
 	//form 태그 양식을 객체화	
 	var form = new FormData($('form[role="imageForm"]')[0]);
 	
-	if($('input[name="pictureFile"]').val()==""){
+	if($('input[name="picture"]').val()==""){
 		alert("사진을 선택하세요.");
-		$('input[name="pictureFile"]').click();
+		$('input[name="picture"]').click();
 		return;
 	};	
 	$.ajax({
-		url:"<%=request.getContextPath()%>/member/picture/upload.do",
+<%-- 		url:"<%=request.getContextPath()%>/employee/picture/upload", --%>
 		data:form,
 		type:'post',
 		processData:false,
@@ -72,8 +75,9 @@ function upload_go(){
 
 //*****  ID 중복 체크
 function CheckID() {
+	var id = document.getElementById('id').value;
 	alert("checkID");
-	window.open('employee/idCheck?id=${id}');
+	window.open('employee/idCheck?id='+id);
 }
 
 
