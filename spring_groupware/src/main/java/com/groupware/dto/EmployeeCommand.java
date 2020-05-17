@@ -180,16 +180,7 @@ public class EmployeeCommand {
 	public void setDept_no(String dept_no) {
 		this.dept_no = dept_no;
 	}
-//	@Override
-//	public String toString() {
-//		return "EmployeeCommand [id=" + id + ", pwd=" + pwd + ", eno=" + eno + ", name=" + name + ", email=" + email
-//				+ ", enabled=" + enabled + ", phone_c=" + phone_c + ", phone_p=" + phone_p + ", picture=" + picture
-//				+ ", regDate=" + regDate + ", position=" + position + ", authority=" + authority + ", deptName="
-//				+ deptName + ", postCode=" + postCode + ", address1=" + address1 + ", address2=" + address2 + ", ssn="
-//				+ ssn + ", remark=" + remark + ", licenseDoc=" + licenseDoc + ", graduDoc=" + graduDoc + ", scoreDoc="
-//				+ scoreDoc + ", register=" + register + ", recentLoginTime=" + recentLoginTime + ", posi_no=" + posi_no
-//				+ ", dept_no=" + dept_no + "]";
-//	}
+
 
 	
 	

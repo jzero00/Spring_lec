@@ -137,14 +137,16 @@ div#picturePreView{
 						<div class="col-xs-8 col-sm-10 g_value">				
 							<input class="col-sm-4" id="email" name="email" type="text"  
 									 onkeyup="this.value=this.value.replace(/[\ㄱ-ㅎㅏ-ㅣ가-힣  ~!#$@%^&*()_+|<>?:{}\- ]/g, '');" 
-									 placeholder="아이디를 입력하시오" value="" />&nbsp;&nbsp;@&nbsp;&nbsp;
-							<select name="email" >
+									 placeholder="아이디를 입력하시오" value="" />
+							&nbsp;&nbsp;<div class="col-sm-1" style="padding-top: 5px; padding-right: 5px;" >@</div>&nbsp;&nbsp;
+							<input class="col-sm-4" hidden="true" type="text" name="email" role="domain">
+							<select name="email">
 								<option value="">-- 계정선택 --</option>
 								<option value="gmail.com">gamil.com</option>
 								<option value="naver.com">naver.com</option>
 								<option value="hanmail.net">hanmail.net</option>
 								<option value="daum.net">daum.net</option>		
-								<option value="yahoo.com">yahoo.com</option>				
+								<option value="yahoo.com">yahoo.com</option>
 								
 							</select>		
 							&nbsp;&nbsp;<input type="checkbox" id="directInput" ><label for="directInput">직접입력</label>
