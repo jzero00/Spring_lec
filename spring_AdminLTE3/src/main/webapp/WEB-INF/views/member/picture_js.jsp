@@ -7,7 +7,7 @@ $('input#inputFile').on('change',function(event){
 	$('input[name="checkUpload"]').val(0);
 	
 	var fileFormat=
-		this.value.substr(this .value.lastIndexOf(".")+1).toUpperCase();
+		this.value.substr(this.value.lastIndexOf(".")+1).toUpperCase();
 	//이미지 확장자 jpg 확인
 	if(fileFormat!="JPG"){
 		alert("이미지는 jpg 형식만 가능합니다.");
@@ -51,7 +51,7 @@ function upload_go(){
 		return;
 	};	
 	$.ajax({
-		url:"<%=request.getContextPath()%>/member/picture/upload.do",
+		url:"<%=request.getContextPath()%>/commons/registPicture.do",
 		data:form,
 		type:'post',
 		processData:false,

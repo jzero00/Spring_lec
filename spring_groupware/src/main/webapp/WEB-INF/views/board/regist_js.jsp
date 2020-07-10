@@ -93,7 +93,10 @@ function docSubmit(){
 				
 			}); 
 		}	
-		 
+		/**
+		비동기와 동기 처리 방식때문에 
+		동시처리 하기 전에 비동기 먼저 다 했는지 확인한 뒤에 동기 처리 하는 방식
+		*/
 		var submitTime=setInterval(function(e){
 			if(fileNum==index){
 				// ajax에 의한 파일업로드가 완료되면 submit을 진행한다.

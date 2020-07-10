@@ -138,8 +138,7 @@
 <!-- /.content-wrapper -->
 
 
-<form role="imageForm" action="picture/upload.do" method="post" 
-		enctype="multipart/form-data">
+<form role="imageForm" action="picture/upload.do" method="post" enctype="multipart/form-data">
 	<input id="inputFile" name="pictureFile" type="file" class="form-control" style="display:none;">
 	<input id="oldFile" type="hidden" name="oldPicture" value="" />
 	<input type="hidden" name="checkUpload" value="0" />	

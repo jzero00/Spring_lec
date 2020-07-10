@@ -26,7 +26,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   
   <!-- jQuery -->
   <script src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
-	
+  <script src="${pageContext.request.contextPath}/resources/pms/js/common.js"></script>
 <decorator:head />
 </head>
 <body class="hold-transition sidebar-mini">
